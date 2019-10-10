@@ -1,0 +1,139 @@
+<!--pages/audio/index/index.wxml-->
+<view class="main">
+  <!-- 视频信息 -->
+  <view class="video-info">
+    <view class="info-bg">
+      <image src="../../../statics/img/audio/bg_shadow.png"></image>
+    </view>
+    <view class="info-cover">
+      <image mode="aspectFill" src="{{cover_pic}}"></image>
+      <!-- <image mode="widthFix" src="co"></image> -->
+    </view>
+  </view>
+
+  <!-- 播放控制 -->
+  <view class="video-control">
+    <!-- 播放进度条 -->
+    <view class="control-progress">
+      <view class="progress-wrap">
+        <view class="progress">
+          <view></view>
+        </view>
+        <view class="progress-active" id="js-progress">
+          <view style="left: -{{percent}}%">
+            <view class="progress-active-icon-mask" bindtouchstart="changeProgressStart" bindtouchend="changeProgressEnd" bindtouchmove="changeProgress">
+              <view class="progress-active-icon" ></view>
+            </view>
+
+          </view>
+        </view>
+      </view>
+      <view class="clearfix progress-time">
+        <view class="progress-begin fl">{{currentTimeStr}}</view>
+        <view class="progress-total fr">{{durationStr}}</view>
+      </view>
+
+    </view>
+
+    <!-- 播放按钮 -->
+    <view class="control-btn">
+      <view class="btn-pre small-btn" data-action="prev" bindtap='changeAudio'>
+        <image src="../../../statics/img/audio/btn_next_bg.png"></image>
+        <view class="btn-play-main i-prev">
+          <image src="../../../statics/img/audio/btn_prev.png"></image>
+        </view>
+      </view>
+      <view class="btn-play" bindtap='playOrPause'>
+        <image class="btn-play-bg" src="../../../statics/img/audio/btn_play_bg.png"></image>
+        <view class="btn-play-main i-pause" wx:if="{{!showLoading && isPlay}}">
+          <image class="btn-play-main i-pause" src="../../../statics/img/audio/btn_pause.png"></image>
+        </view>
+        <view class="btn-play-main i-play" wx:if="{{!showLoading && !isPlay}}">
+          <image src="../../../statics/img/audio/btn_play.png"></image>
+        </view>
+        <view class="btn-play-main i-loading" wx:if="{{showLoading}}">
+          <image src="../../../statics/img/audio/loading.png"></image>
+        </view>
+
+      </view>
+      <view class="btn-next small-btn" data-action="next" bindtap='changeAudio'>
+        <image src="../../../statics/img/audio/btn_next_bg.png"></image>
+        <view class="btn-play-main i-prev">
+          <image src="../../../statics/img/audio/btn_next.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部 -->
+  <view class="video-footer">
+    <view class="footer-item">
+      <view class="item-content" bindtap="openList">
+        <view class="item-icon">
+          <image class="i-list" src="../../../statics/img/audio/i_list.png"></image>
+        </view>
+        <view>列表</view>
+      </view>
+    </view>
+    <view class="footer-item">
+      <navigator class="item-content" url="../../home/doc/doc?id={{playList[playListActive].id}}">
+        <view class="item-icon">
+          <image class="i-doc" src="../../../statics/img/audio/i_video_doc.png"></image>
+        </view>
+        <view>文稿</view>
+      </navigator>
+
+    </view>
+    <view class="footer-item">
+
+      <view class="item-content">
+        <button class="share-btn" open-type="share"></button>
+        <view class="item-icon">
+          <image class="i-share" src="../../../statics/img/audio/i_share.png"></image>
+        </view>
+        <view>分享</view>
+      </view>
+
+    </view>
+  </view>
+
+  <!-- 播放列表-->
+  <view class="play-list-wrap" wx:if="{{showList}}" bindtap="handleClose">
+
+    <!-- <view class="list">
+   <view class="item {{playListActive === index ? 'active' : ''}}"  bindtap="handleTap" data-index="{{index}}">
+
+      <view class="item-img">
+        <image mode="widthFix" src="{{classInfo.cover_pic}}"></image>
+      </view>
+      <view class="item-content">
+        <view class="item-name ellipsis">{{item.title}}</view>
+        <view class="item-time">{{item._currentTime}}</view>
+      </view>
+    </view>
+    
+  </view> -->
+
+    <view class="list-main" catchtap="handleEvent">
+      <view class="main-head">播放列表</view>
+      <view class="main-list-wrap">
+        <scroll-view scroll-y="{{true}}" class="main-list">
+
+          <view class="main-item {{playListActive === index ? 'active' : ''}}" data-index="{{index}}" bindtap="handleListTap" wx:for="{{playList}}">
+            <view class="item-title">{{item.title}}
+              <text> - </text>
+              <text>{{classInfo.author}}</text>
+            </view>
+            <view class="item-time">
+              {{item._duration}}
+              <text>{{item._currentTime}}</text>
+            </view>
+          </view>
+
+        </scroll-view>
+      </view>
+      <view class="main-close" bindtap="handleClose">关闭</view>
+    </view>
+
+  </view>
+</view>

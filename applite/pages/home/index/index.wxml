@@ -1,0 +1,176 @@
+<!--pages/home/index/index.wxml-->
+
+<view class="page" wx:if="{{isAuth}}">
+  <view class='de'></view>
+  <view>
+
+    <!-- swiper -->
+    <view class="swiper-wrap">
+      <swiper indicator-dots="{{banners.length > 1}}" autoplay="true" interval="4000" duration="700" indicator-active-color="#006FFD" indicator-color="#ffffff" circular="true">
+        <block wx:for="{{banners}}">
+          <swiper-item>
+            <view class="item-wrap" data-id="{{item.parent_id}}" bindtap='bannerTap'>
+              <view>
+                <image src="{{item.pic}}" mode="aspectFill" />
+                <view class="swiper-title ellipsis">{{item.title || ''}}</view>
+              </view>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <!-- swiper end -->
+    <view class="empty-margin"></view>
+
+    <!-- tab -->
+    <view class="tab-wrap">
+      <scroll-view scroll-x="true" class="scroll-wrap">
+        <view class="main" style="width: 1490rpx;">
+
+          <view class='tab-item'>
+            <view class='{{tab === "tab_all" ? "active" : ""}}' data-tab="tab_all" bindtap='changeTab'>
+              <view class="tab-item-img">
+                <image src="../../../statics/img/home/i_all.png" mode="scaleToFill"></image>
+              </view>
+              <view>全部</view>
+            </view>
+          </view>
+
+          <view class='tab-item'>
+            <view class='{{tab === "tab_tzlc" ? "active" : ""}}' data-tab="tab_tzlc" bindtap='changeTab'>
+              <view class="tab-item-img">
+                <image src="../../../statics/img/home/i_licai.png" mode="scaleToFill"></image>
+              </view>
+              <view>投资理财</view>
+            </view>
+          </view>
+
+          <view class='tab-item'>
+            <view class='{{tab === "tab_grts" ? "active" : ""}}' data-tab="tab_grts" bindtap='changeTab'>
+              <view class="tab-item-img">
+                <image src="../../../statics/img/home/i_geren.png" mode="scaleToFill"></image>
+              </view>
+              <view>个人提升</view>
+            </view>
+          </view>
+
+          <view class='tab-item'>
+            <view class='{{tab === "tab_zcjn" ? "active" : ""}}' data-tab="tab_zcjn" bindtap='changeTab'>
+              <view class="tab-item-img">
+                <image src="../../../statics/img/home/i_zhichang.png" mode="scaleToFill"></image>
+              </view>
+              <view>职场技能</view>
+            </view>
+          </view>
+
+          <view class='tab-item'>
+            <view class='{{tab === "tab_qzjy" ? "active" : ""}}' data-tab="tab_qzjy" bindtap='changeTab'>
+              <view class="tab-item-img">
+                <image src="../../../statics/img/home/i_jiaoyu.png" mode="scaleToFill"></image>
+              </view>
+              <view>亲子教育</view>
+            </view>
+          </view>
+
+          <view class='tab-item'>
+            <view class='{{tab === "tab_lxqg" ? "active" : ""}}' data-tab="tab_lxqg" bindtap='changeTab'>
+              <view class="tab-item-img">
+                <image src="../../../statics/img/home/i_motion.png" mode="scaleToFill"></image>
+              </view>
+              <view>两性情感</view>
+            </view>
+          </view>
+
+          <view class='tab-item'>
+            <view class='{{tab === "tab_jsss" ? "active" : ""}}' data-tab="tab_jsss" bindtap='changeTab'>
+              <view class="tab-item-img">
+                <image src="../../../statics/img/home/i_health.png" mode="scaleToFill"></image>
+              </view>
+              <view>健身瘦身</view>
+            </view>
+          </view>
+
+          <view class='tab-item'>
+            <view class='{{tab === "tab_nxss" ? "active" : ""}}' data-tab="tab_nxss" bindtap='changeTab'>
+              <view class="tab-item-img">
+                <image src="../../../statics/img/home/i_fishon.png" mode="scaleToFill"></image>
+              </view>
+              <view>女性时尚</view>
+            </view>
+          </view>
+        </view>
+
+      </scroll-view>
+    </view>
+
+    <!-- recommend -->
+    <view class="recommend-wrap section {{tab === 'tab_all' && recommends.length ? '' : 'hide'}}">
+      <view class="section-title recommend-title">热门课程</view>
+      <view class="recommend-content section-content clearfix">
+        <block wx:for="{{recommends}}">
+          <view class="recommend-item fl">
+            <navigator url="/pages/home/detail/detail?id={{item.id}}" hover-class="my-navigator-hover">
+              <view class="item-img">
+                <image src="{{item.cover_pic}}" class="" mode="aspectFill"></image>
+              </view>
+              <view class="item-title ellipsis">{{item.title}}</view>
+              <view class="item-price">
+                <text>￥{{item._price}}</text>
+                <text wx:if="{{item.original_price}}" class="delete">￥{{item._original_price}}</text>
+              </view>
+            </navigator>
+          </view>
+        </block>
+
+        <!-- <view class="recommend-item fl">
+          <navigator url="/pages/home/detail/detail?id=1" hover-class="my-navigator-hover">
+            <view class="item-img">
+              <image src="https://pic.ewanhe.com/public/images/2018/2/25/oJeT37RvfU-1519573396979.jpg" class="" mode="widthFix"></image>
+            </view>
+            <view class="item-title ellipsis">腾讯云点播防盗链支持Referer......</view>
+            <view class="item-price">
+              <text>￥29</text>
+              <text class="delete">￥299</text>
+            </view>
+          </navigator>
+        </view> -->
+
+      </view>
+    </view>
+
+    <!-- list start -->
+    <!-- 全部 -->
+    <view class="section-new">
+      <view class="section-title">最新课程</view>
+      <view class="section-content">
+        <list-section active="{{tab}}" name="tab_all" list-data="{{tab_all}}"></list-section>
+
+        <!-- 个人提升 -->
+        <list-section active="{{tab}}" name="tab_grts" list-data="{{tab_grts}}"></list-section>
+
+        <!-- 职场技能 -->
+        <list-section active="{{tab}}" name="tab_zcjn" list-data="{{tab_zcjn}}"></list-section>
+
+        <!-- 两性情感 -->
+        <list-section active="{{tab}}" name="tab_lxqg" list-data="{{tab_lxqg}}"></list-section>
+
+        <!-- 亲子教育 -->
+        <list-section active="{{tab}}" name="tab_qzjy" list-data="{{tab_qzjy}}"></list-section>
+
+        <!-- 健身瘦身 -->
+        <list-section active="{{tab}}" name="tab_jsss" list-data="{{tab_jsss}}"></list-section>
+
+        <!-- 女性时尚 -->
+        <list-section active="{{tab}}" name="tab_nxss" list-data="{{tab_nxss}}"></list-section>
+
+        <!-- 投资理财 -->
+        <list-section active="{{tab}}" name="tab_tzlc" list-data="{{tab_tzlc}}"></list-section>
+      </view>
+    </view>
+
+
+  </view>
+
+  <video-btn></video-btn>
+
+</view>

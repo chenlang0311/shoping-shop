@@ -1,0 +1,57 @@
+/**app.wxss**/
+page {
+  height: 100%;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+
+page {
+  font-size: 28rpx;
+}
+
+page, view, text, image, scroll-view, input, button {
+  box-sizing: border-box;
+}
+
+.hide {
+  display: none;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 点击导航组件时的视觉反馈 */
+.my-navigator-hover {
+  background: #f7f7f7;
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.clearfix:after {
+    content:" ";
+    display:block;
+    clear:both;
+}

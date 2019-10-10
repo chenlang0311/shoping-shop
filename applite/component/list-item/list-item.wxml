@@ -1,0 +1,32 @@
+<view class="{{active === name ? '' : 'hide'}}">
+  <view class="new-content">
+    <block wx:for="{{listData.list}}">
+      <navigator url="/pages/home/detail/detail?id={{item.id}}" hover-class="my-navigator-hover">
+        <view class="new-item">
+          <view class="clearfix">
+            <view class="new-item-img fl">
+              <image mode='aspectFill' src="{{item.cover_pic}}"></image>
+            </view>
+            <view class="new-item-content fr">
+              <view class="content-title">{{item.title}}</view>
+              <view class="item-small ellipsis">讲师：{{item.author}}<text wx:if="{{item.author_abstract}}">（{{item.author_abstract}}）</text></view>
+              <view class="clearfix item-small">
+                <block wx:if="{{hasTime}}">
+                  <view class="fl">时长：
+                    <text>{{item._duration}}</text> /
+                    <text>{{item.catalogs}}</text>节课
+                  </view>
+                </block>
+                <view class="{{hasTime ? 'fr' : 'fl'}} locked">{{item.unlocks}}人解锁</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+
+    </block>
+  </view>
+
+  <!-- load more -->
+  <load-more hasMore="{{listData.hasMore}}" hasData="{{listData.list.length}}" init="{{listData.init}}"></load-more>
+</view>

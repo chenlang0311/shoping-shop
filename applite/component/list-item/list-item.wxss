@@ -1,0 +1,96 @@
+/* component/list-item/list-item.wxss */
+/* 
+.section {
+  border-top: 2rpx solid #E5E5E5;
+  padding-bottom: 18rpx;
+}
+
+.section .section-title {
+  padding: 30rpx;
+  padding-bottom: 0;
+  line-height: 1;
+  font-size: 32rpx;
+  color: #282828;
+}
+
+.section .section-content {
+  border-radius: 10rpx;
+  width: 100%;
+  margin: 0 auto;
+} */
+
+/* new start  */
+
+.new-item {
+  /* margin-bottom: 30rpx; */
+  padding: 25rpx 30rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.new-item .new-item-img {
+  width: 210rpx;
+  height: 150rpx;
+  overflow: hidden;
+  border-radius: 10rpx;
+}
+
+.new-item .new-item-img image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}
+
+.new-item .new-item-content {
+  color: #6E6E6E;
+  width: 452rpx;
+  font-size: 24rpx;
+  line-height: 38rpx;
+}
+
+.new-item-content .item-small {
+  width: 100%;
+  overflow: hidden;
+}
+
+.new-item .item-small {
+  line-height: 34rpx;
+}
+
+.new-item-content .content-title {
+  color: #282828;
+  line-height: 38rpx;
+  margin-bottom: 14rpx;
+  height: 70rpx;
+  overflow: hidden;
+  font-size: 28rpx;
+  letter-spacing: 1rpx;
+}
+/* new end */
+
+.my-navigator-hover {
+    background: #f7f7f7;
+}
+
+.hide {
+  display: none;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.clearfix:after {
+    content:" ";
+    display:block;
+    clear:both;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

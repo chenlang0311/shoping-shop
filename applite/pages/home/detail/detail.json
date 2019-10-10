@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "课程详情",
+  "usingComponents": {
+    "head-tab": "/component/tab/head-tab",
+    "load-more": "/component/load-more/load-more"
+  },
+  "navigationBarBackgroundColor": "#F0F0F0"
+}

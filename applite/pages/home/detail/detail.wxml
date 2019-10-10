@@ -1,0 +1,94 @@
+<!--pages/home/detail/detail.wxml-->
+<import src="../../../wxParse/wxParse.wxml" />
+<view class="page">
+
+  <!-- 悬浮的tab栏 -->
+  <!-- <head-tab class-name='fixed-tab {{showHeadTab ? "" : "hide"}}' tabList="{{tabList}}" tab="{{tab}}" bind:changeTab="changeTab"></head-tab> -->
+
+  <!-- 头部简介 -->
+  <!-- <view class="head-wrap">
+    <view class="img-wrap">
+        <view class="img-mask"></view>
+      <image src="{{info.cover_pic}}"></image>
+    </view>
+    
+    <view class="head-content">
+      <view class="head-title ellipsis">{{info.title}}</view>
+      <view class="head-lock">{{info.unlocks || 0}}人解锁</view>
+    </view>
+  </view> -->
+
+  <view class="head-wrap">
+    <view class="head-bg-wrap">
+      <image mode='aspectFill' src="../../../statics/img/home/detail_bg.png"></image>
+    </view>
+    <view class="head-main">
+      <view class="head-img">
+        <image mode='aspectFill' src="{{info.cover_pic}}"></image>
+      </view>
+      <view class="head-title"><view>{{info.title}}</view></view>
+      <view class="head-content">
+        <view class="head-content-item">
+          <view class="item-cur">{{info.read_total}}</view>
+          <view>正在参加</view>
+        </view>
+        <view class="head-content-item">
+          <view class="item-price">￥{{info.price}}</view>
+          <view wx:if="info.original_price" class="delete">￥{{info.original_price}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 详情 & 课程 -->
+  <view class="content-wrap">
+
+    <!-- tab 切换 -->
+    <view class="tab-wrap">
+      <view class="tab-item {{tab === 'detail' ? 'active' : ''}}" bindtap="changeTab" data-tab="detail">
+        <view>详情</view>
+      </view>
+      <view class="tab-item {{tab === 'lesson' ? 'active' : ''}}" bindtap="changeTab" data-tab="lesson">
+        <view>目录</view>
+      </view>
+    </view>
+    <!-- 详情 -->
+    <view class="detail-wrap {{tab === 'detail' ? '' : 'hide'}}">
+      <view class="{{init ? '' : 'hide'}}">
+        <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+      </view>
+
+      <load-more show="{{!(init && hasDetails)}}"  init="{{init}}" hasData="{{hasDetails}}"></load-more>
+    </view>
+
+    <!-- 课程 -->
+    <view class="lesson-wrap {{tab === 'lesson' ? '' : 'hide'}}">
+
+      <view class="lesson-item" wx:for="{{catalogs}}" wx:for-key="{{item.index}}">
+        <view class="item-content" data-index="{{index}}" data-id="{{item.id}}" data-audition="{{item.audition}}" bindtap="playVoice">
+          <view class="item-title ellipsis">{{item.title}}</view>
+          <view class="item-time clearfix">
+            <view class="time-date">{{item._duration}}</view>
+            <view class="time-times">{{item.reads}}
+              <text>人正在学习</text>
+            </view>
+            <view class="test" wx:if="{{item.audition === 'yes'}}">（试听）</view>
+          </view>
+        </view>
+        <view class="item-icon-wrap">
+          <view class="item-icon i-book" data-id="{{item.id}}" data-audition="{{item.audition}}" bindtap='checkDoc' wx:if="{{item.audition === 'yes' || !info.locked}}">
+            <image mode='aspectFit' src="../../../statics/img/home/i_doc.png"></image>
+          </view>
+          <view class="item-icon i-lock" bindtap="toastUnlock" wx:if="{{item.audition === 'no' && info.locked}}">
+            <image mode='aspectFit'  src="../../../statics/img/home/i_lock.png"></image>
+          </view>
+        </view>
+
+      </view>
+    </view>
+
+  </view>
+
+  <!-- 底部购买 -->
+  <view class="footer" bindtap='handleUnlock' wx-if="{{hasData && info.locked}}">￥{{info.price}} 解锁</view>
+</view>

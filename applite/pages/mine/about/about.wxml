@@ -1,0 +1,17 @@
+
+<view class="page">
+  <view class="about-logo">
+    <image src="../../../statics/img/mine/logo.png"></image>
+  </view>
+
+  <view class="about-word"><view class="about-line line-left"></view>改变认知、重塑自我、引领成长！<view class="about-line line-right"></view></view>
+
+  <view class="about-info">改变认知、重塑自我、引领成长！这里有个人成长、职场技能、时尚情感等精华课程。50余位大咖亲授。更多可关注公众号重建自我。</view>
+
+  <view class="code-wrap">
+    <image src="../../../statics/img/mine/code_follow.png"></image>
+  </view>
+
+  <view class="search">搜索“重建自我”或扫描二维码关注公众号</view>
+  <view class="tips">深圳市每天管理咨询有限公司</view>
+</view>

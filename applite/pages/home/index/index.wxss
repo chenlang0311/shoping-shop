@@ -1,0 +1,282 @@
+/* pages/home/index/index.wxss */
+.de{
+  height: 100rpx;
+  width: 100rpx;
+  position: fixed;
+  background-color: red;
+  animation: child-1 1s linear infinite;
+  z-index: 9999999;
+}
+@-webkit-keyframes child-1 {
+  from {
+    top: 10rpx;
+  }
+
+  to {
+    top: 56rpx;
+  }
+}
+
+scroll-view {
+  height: 100vh;
+}
+
+.hide {
+  display: none !important;
+}
+
+/* swiper begin */
+
+.swiper-wrap {
+  height: 320rpx;
+  position: relative;
+  background: #fff;
+}
+
+.swiper-wrap swiper {
+  height: 100%;
+}
+
+.swiper-wrap .item-wrap {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 0 30rpx;
+}
+
+.swiper-wrap .item-wrap > view {
+  border-radius: 10rpx;
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+}
+
+.swiper-title {
+  position: absolute;
+  bottom: 40rpx;
+  left: 0;
+  padding: 0 40rpx;
+  width: 100%;
+  overflow: hidden;
+  color: #fff;
+  
+}
+
+.item-wrap image {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-wrap .wx-swiper-dots {
+  position: absolute;
+  bottom: 15rpx;
+}
+
+.swiper-wrap .wx-swiper-dots {
+  position: absolute;
+  bottom: 15rpx;
+}
+
+.swiper-wrap .wx-swiper-dot {
+  height: 10rpx;
+  width: 10rpx;
+  margin-right: 8rpx !important;
+}
+
+.swiper-wrap .wx-swiper-dot:last-child {
+  margin-right: 0 !important;
+}
+
+/* swiper end */
+
+.empty-margin {
+  height: 12rpx;
+  background: #f0f0f0;
+  width: 100%;
+}
+
+/* update at 2018/3/28 */
+
+/* head tab */
+
+.tab-wrap {
+}
+
+.tab-wrap .scroll-wrap {
+  height: 180rpx;
+}
+
+.tab-wrap .main {
+  /* padding: 0 10rpx; */
+}
+
+.tab-wrap .active view {
+  color: #1976f1 !important;
+}
+
+.tab-wrap .tab-item {
+  padding: 28rpx 29rpx;
+  display: inline-block;
+  text-align: center;
+  width: 186rpx;
+}
+
+.tab-wrap .tab-item > view {
+  height: 100%;
+}
+
+.tab-wrap .tab-item-img {
+  width: 82rpx;
+  height: 82rpx;
+  margin: 0 auto 10rpx;
+}
+
+.tab-wrap .tab-item-img image {
+  width: 100%;
+  height: 100%;
+}
+
+.tab-wrap .tab-item view {
+  line-height: 1;
+  font-size: 24rpx;
+  color: #282828;
+}
+
+/* head tab end*/
+
+/* recommend start */
+
+.section {
+  border-top: 2rpx solid #e5e5e5;
+}
+
+.section .section-title {
+  padding: 28rpx;
+  line-height: 1;
+  font-size: 32rpx;
+  color: #282828;
+}
+
+.section .section-content {
+  border-radius: 10rpx;
+  width: 690rpx;
+  margin: 0 auto;
+}
+
+
+.section-new {
+  border-top: 2rpx solid #E5E5E5;
+  padding-bottom: 18rpx;
+}
+
+.section-new .section-title {
+  padding: 30rpx;
+  padding-bottom: 0;
+  line-height: 1;
+  font-size: 32rpx;
+  color: #282828;
+}
+
+.section-new .section-content {
+  border-radius: 10rpx;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.recommend-wrap {
+}
+
+.recommend-wrap .recommend-content {
+  padding-bottom: 28rpx;
+  /* box-shadow: 0 0 10rpx 4rpx #f7f7f7; */
+}
+
+.recommend-wrap .recommend-title {
+  color: #f91158;
+}
+
+.recommend-wrap .recommend-item {
+  width: 328rpx;
+  margin-right: 30rpx;
+  font-size: 28rpx;
+}
+
+.recommend-wrap .recommend-item:last-child {
+  margin-right: 0;
+}
+
+.recommend-wrap .item-img {
+  width: 100%;
+  border-radius: 10rpx;
+  overflow: hidden;
+  height: 200rpx;
+  position: relative;
+}
+
+.recommend-wrap .item-img image {
+  width: 100%;
+  height: 100%;
+}
+
+.recommend-wrap .item-title {
+  width: 100%;
+  color: #282828;
+  line-height: 1;
+  margin-top: 20rpx;
+}
+
+.recommend-wrap .item-price {
+  font-size: 28rpx;
+  margin-top: 20rpx;
+  color: #f91158;
+  line-height: 1;
+}
+
+.recommend-wrap .item-price .delete {
+  text-decoration: line-through;
+  color: #6e6e6e;
+  margin-left: 30rpx;
+}
+
+/* recommend end */
+
+/* new start  */
+
+/* .new-content {
+  padding: 20rpx 0;
+}
+
+.new-item {
+  padding: 30rpx 0;
+}
+
+.new-item .new-item-img {
+  width: 210rpx;
+  height: 150rpx;
+  overflow: hidden;
+  border-radius: 10rpx;
+}
+
+.new-item .new-item-img image {
+  width: 100%;
+  border-radius: 10rpx;
+}
+
+.new-item .new-item-content {
+  line-height: 24rpx;
+  font-size: 20rpx;
+  color: #6e6e6e;
+  width: 444rpx;
+}
+
+.new-item-content .content-title {
+  font-size: 24rpx;
+  color: #282828;
+  line-height: 32rpx;
+  margin-bottom: 4rpx;
+  height: 64rpx;
+  overflow: hidden;
+} */
+
+/* new end */

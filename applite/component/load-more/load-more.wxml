@@ -1,0 +1,26 @@
+<!--component/load-more/load-more.wxml-->
+<view class="{{show ? '' : 'hide'}}">
+  <!-- 列表底部的加载中 -->
+  <view class="weui-loadmore loadmore-bot" wx:if="{{hasData && hasMore}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">正在加载</view>
+  </view>
+
+  <!-- 到底了 -->
+  <view class="weui-no-more" wx:if="{{hasData && !hasMore}}">
+    没有更多了
+  </view>
+
+  <!-- 暂无数据 -->
+  <view class="weui-no-data" wx:if="{{init && !hasData}}">
+    <text>暂无数据</text>
+  </view>
+
+  <!-- 第一次加载数据 -->
+  <view class="weui-loadmore loading-wrap" wx:if="{{!init}}">
+    <view>
+      <view class="weui-loading"></view>
+      <view class="weui-loadmore__tips">加载中</view>
+    </view>
+  </view>
+</view>

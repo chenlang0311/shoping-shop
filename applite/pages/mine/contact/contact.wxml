@@ -1,0 +1,25 @@
+<!--pages/mine/contact/contact.wxml-->
+<view class="contact-wrap">
+  <view class="list">
+
+    <view class="item">
+      <image class="item-image" mode="aspectFit" src="../../../statics/img/mine/i_qq.png"></image>
+      <view class="item-content">客服QQ：
+        <text bindlongtap="copy" data-type="qq">{{qq}}</text>
+      </view>
+    </view>
+    <view class="item">
+      <image class="item-image" mode="aspectFit" src="../../../statics/img/mine/i_wechat.png"></image>
+      <view class="item-content">客服微信：
+        <text bindlongtap="copy" data-type="wechat">{{wechat}}</text>
+      </view>
+    </view>
+    <view class="item">
+      <image class="item-image" mode="aspectFit" src="../../../statics/img/mine/i_qun.png"></image>
+      <view class="item-content">官方交流群：
+        <text bindlongtap="copy" data-type="qun">{{qun}}</text>
+      </view>
+    </view>
+
+  </view>
+</view>

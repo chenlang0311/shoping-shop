@@ -1,0 +1,49 @@
+<!--pages/audio/list/list.wxml-->
+<view class="play-list-wrap" wx:if="{{showList}}" bindtap="handleClose">
+
+  <!-- <view class="list">
+   <view class="item {{playListActive === index ? 'active' : ''}}"  bindtap="handleTap" data-index="{{index}}">
+
+      <view class="item-img">
+        <image mode="widthFix" src="{{classInfo.cover_pic}}"></image>
+      </view>
+      <view class="item-content">
+        <view class="item-name ellipsis">{{item.title}}</view>
+        <view class="item-time">{{item._currentTime}}</view>
+      </view>
+    </view>
+    
+  </view> -->
+
+  <view class="list-main" catchtap="handleEvent">
+    <view class="main-head">播放列表</view>
+    <view class="main-list-wrap">
+      <scroll-view scroll-y="{{true}}" class="main-list">
+        <view class="main-item active" data-index="" bindtap="handleTap">
+          <view class="item-title">上榜福布斯新的主播
+            <text> - </text>
+            <text>旋风少女</text>
+          </view>
+          <view class="item-time">
+            00:45:00
+            <text>已听30%</text>
+          </view>
+        </view>
+
+        <view class="main-item">
+          <view class="item-title">上榜福布斯新的主播
+            <text> - </text>
+            <text>旋风少女</text>
+          </view>
+          <view class="item-time">
+            00:45:00
+            <text>已听30%</text>
+          </view>
+        </view>
+
+      </scroll-view>
+    </view>
+    <view class="main-close" bindtap="handleClose">关闭</view>
+  </view>
+
+</view>

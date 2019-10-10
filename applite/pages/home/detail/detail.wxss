@@ -1,0 +1,223 @@
+/* pages/home/detail/detail.wxss */
+
+.empty-block {
+  height: 20rpx;
+  background: #f0f0f0;
+  width: 100%;
+}
+
+/* 头部简介开始 */
+
+.head-wrap {
+  height: 522rpx;
+  background: #f0f0f0;
+  position: relative;
+}
+
+.head-wrap .head-bg-wrap {
+  height: 335rpx;
+  width: 100%;
+  overflow: hidden;
+}
+
+.head-bg-wrap image {
+  width: 100%;
+}
+
+.head-main {
+  width: 690rpx;
+  height: 416rpx;
+  position: absolute;
+  left: 30rpx;
+  top: 76rpx;
+  background: #ffffff;
+  border-radius: 10rpx;
+}
+
+.head-main .head-img {
+  position: absolute;
+  top: -50rpx;
+  left: 50%;
+  width: 186rpx;
+  height: 186rpx;
+  transform: translate(-50%, 0);
+  border-radius: 50%;
+  border: 6rpx solid #e5e5e5;
+  overflow: hidden;
+}
+
+.head-main .head-img image {
+  width: 100%;
+  height: 100%;
+}
+
+.head-title {
+  line-height: 40rpx;
+  padding: 152rpx 100rpx 50rpx;
+  color: #282828;
+  font-size: 32rpx;
+  height: 282rpx;
+  text-align: center;
+  overflow: hidden;
+}
+
+.head-title > view {
+  height: 100%;
+  overflow: hidden;
+}
+
+.head-main .head-content {
+  display: flex;
+}
+
+.head-main .head-content-item {
+  flex: 1;
+  border-right: 2rpx solid #f0f0f0;
+  height: 98rpx;
+  text-align: center;
+  color: #6e6e6e;
+  font-size: 28rpx;
+  line-height: 36rpx;
+  padding-top: 16rpx;
+}
+
+.head-main .head-content-item:last-child {
+  border-right: none;
+}
+
+.head-content-item .item-cur {
+  color: #1976F1;
+}
+
+.head-content-item .item-price {
+  color: #F91158;
+}
+
+.head-content-item .delete {
+  
+  text-decoration: line-through;
+}
+
+/* 头部简介结束 */
+
+/* tab 开始 */
+.tab-wrap {
+  display: flex;
+  width: 100%;
+}
+
+.tab-wrap .tab-item {
+  flex: 1;
+  height: 102rpx;
+  color: #282828;
+  font-size: 32rpx;
+  line-height: 88rpx;
+  text-align: center;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.tab-wrap .tab-item > view {
+  display: inline-block;
+  height: 100%;
+  position: relative;
+  top: 2rpx;
+}
+
+.tab-wrap .active view {
+  color: #1976F1;
+  border-bottom: 3rpx solid #1976F1;
+}
+
+
+/* tab 结束 */
+
+/* 详情 & 目录 开始 */
+
+.detail-wrap {
+  padding: 30rpx 26rpx 160rpx;
+  overflow: hidden;
+}
+
+.lesson-wrap {
+  padding-bottom: 160rpx;
+}
+
+.lesson-item {
+  position: relative;
+  padding: 30rpx;
+}
+
+.lesson-item .item-content {
+  padding-right: 66rpx;
+  line-height: 1;
+}
+
+.lesson-item .item-title {
+  font-size: 28rpx;
+  color: #282828;
+  padding-right: 20rpx;
+}
+
+.lesson-item .item-time {
+  font-size: 24rpx;
+  color: #6E6E6E;
+  padding-top: 16rpx;
+  line-height: 1;
+}
+
+.lesson-item .item-time view {
+  float: left;
+}
+
+.lesson-item .time-times {
+  margin-left: 20rpx;
+}
+
+.lesson-item .test {
+  
+  margin-left: 4rpx;
+}
+
+.lesson-item .item-icon-wrap {
+  position: absolute;
+  right: 42rpx;
+  top: 42rpx;
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.lesson-item .item-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.lesson-item .i-book image {
+  width: 30rpx;
+  height: 30rpx;
+  margin: 7rpx;
+}
+
+.lesson-item .i-lock image {
+  width: 30rpx;
+  height: 30rpx;
+  margin: 7rpx;
+}
+
+/* 详情 & 目录 结束 */
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 100rpx;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  line-height: 100rpx;
+  background: #1976f1;
+}
+
+text {
+  color: inherit;
+  font-size: inherit;
+}

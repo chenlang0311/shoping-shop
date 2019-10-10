@@ -1,0 +1,23 @@
+<!--component/tab/head-tab.wxml-->
+
+<!-- 由于从组件外部传入样式类的externalClasses 属性要求的版本过高（1.9.90），
+所以传入的类需要额外添加到组件的样式表中 -->
+<!-- tab -->
+<view class="tab-wrap {{className || ''}}">
+  <!-- <view class="scroll-wrap">
+    <view class='tab-item {{tab === item.name ? "active" : ""}}' wx:for="{{tabList}}" wx:key="{{item.name}}" data-tab='{{item.name}}' data-index="{{item.index}}" bindtap='changeTab'>
+      <text>{{item.value}}</text>
+    </view>
+  </view> -->
+
+  <scroll-view scroll-x="true" class="scroll-wrap" >
+    <view class="main {{hasScroll ? 'scroll' : 'flex'}}" style="width: {{scrollWidth}};">
+      <view class='tab-item {{tab === item.name ? "active" : ""}} js-item' wx:for="{{tabList}}" wx:key="{{item.name}}" data-tab='{{item.name}}' data-index="{{item.index}}" bindtap='changeTab'>
+        <text>{{item.value}}</text>
+      </view>
+    </view>
+    
+  </scroll-view>
+
+</view>
+<!-- tab end-->

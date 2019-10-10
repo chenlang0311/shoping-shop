@@ -1,0 +1,456 @@
+/* pages/audio/index/index.wxss */
+
+.main {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  /* flex: 1; */
+}
+
+/* video-btn start */
+
+.video-info {
+  height: 710rpx;
+  position: relative;
+}
+
+.info-bg {
+  width: 100%;
+  height: 700rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+
+.info-bg image {
+  width: 100%;
+  height: 100%;
+}
+
+.info-bg-bot {
+  position: absolute;
+  top: 500rpx;
+  left: 0;
+  height: 210rpx;
+  z-index: 10;
+  width: 100%;
+}
+
+.info-bg-bot image {
+  width: 100%;
+  height: 100%;
+}
+
+.img-bg {
+  width: 530rpx;
+  height: 630rpx;
+  position: absolute;
+  top: 112rpx;
+  left: 110rpx;
+  z-index: 1;
+}
+
+.img-bg image {
+  width: 100%;
+  height: 100%;
+}
+
+.video-info .info-head {
+  text-align: center;
+  padding: 20rpx 0;
+}
+
+.video-info .head-title {
+  padding: 0 40rpx;
+  width: 100%;
+}
+
+.video-info .info-cover {
+  width: 628rpx;
+  height: 596rpx;
+  margin: 10rpx auto 0;
+  border-radius: 10rpx;
+  overflow: hidden;
+  position: absolute;
+  top: 10rpx;
+  left: 61rpx;
+  z-index: 20;
+  background: #fff;
+  /* box-shadow: 0 7rpx 100rpx 10rpx #1979f5; */
+}
+
+.video-info .info-cover image {
+  width: 100%;
+  height: 100%;
+}
+
+/* video-btn end */
+
+/* video-control start */
+
+.video-control {
+  padding-top: 50rpx;
+}
+
+.video-control .control-progress {
+  height: 80rpx;
+  position: relative;
+  line-height: 1;
+  text-align: center;
+  padding: 0 75rpx;
+}
+
+.video-control .progress-begin, .video-control .progress-total {
+  color: #959595;
+  /* color: #1976f1; */
+  font-size: 24rpx;
+}
+
+
+.video-control .progress-wrap {
+  margin: 0 auto;
+  width: 600rpx;
+  height: 40rpx;
+  overflow: hidden;
+  position: relative;
+}
+
+.video-control .progress, .video-control .progress-active {
+  height: 4rpx;
+  margin-top: 18rpx;
+  border-radius: 2rpx;
+}
+
+.video-control .progress {
+  padding: 0 8rpx;
+}
+
+.video-control .progress view {
+  /* width: 100%; */
+  height: 100%;
+background: #f0f0f0;
+}
+
+.video-control .progress-time {
+  margin-top: 10rpx;
+}
+
+.video-control .progress-active {
+  height: 4rpx;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 0 8rpx;
+}
+
+.video-control  .progress-active > view {
+  position: relative;
+  height: 100%;
+  left: -100%;
+  background: #1976f1;
+  margin-left: -20rpx;
+}
+
+.progress-active-icon-mask {
+  position: absolute;
+  height: 40rpx;
+  width: 40rpx;
+   right: -16rpx;
+   top: -18rpx;
+  z-index: 100;
+}
+
+.video-control  .progress-active .progress-active-icon {
+  width: 9rpx;
+  height: 40rpx;
+  background: #1976f1;
+  margin: 0 auto;
+  border-radius: 5rpx;
+}
+
+/* video-control end */
+
+/* control-btn start */
+
+.control-btn {
+  margin-top: 56rpx;
+  height: 162rpx;
+  position: relative;
+}
+
+.control-btn .btn-pre {
+  left: 118rpx;
+}
+
+.control-btn .btn-play {
+  position: absolute;
+  left: 50%;
+  margin-left: -80rpx;
+  top: 0;
+  height: 160rpx;
+  width: 160rpx;
+}
+
+.control-btn  .btn-play image {
+  width: 100%;
+  height: 100%;
+}
+
+.btn-play-main {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn-play-main image {
+  width: 100%;
+  height: 100%;
+}
+
+.i-pause {
+  width: 40rpx;
+  height: 61rpx;
+}
+
+.i-loading {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.i-loading image {
+  animation: loading 1.5s linear infinite;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.i-play {
+  width: 44rpx;
+  height: 54rpx;
+}
+
+.i-prev {
+  width: 26rpx;
+  height: 44rpx;
+}
+
+.btn-play-main image {
+}
+
+.control-btn .btn-next {
+  right: 118rpx;
+}
+
+.control-btn .small-btn {
+  height: 118rpx;
+  width: 118rpx;
+  position: absolute;
+  top: 21rpx;
+}
+
+.control-btn .small-btn image {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* control-btn end */
+
+/* footer start */
+
+.video-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  height: 100rpx;
+  padding-top: 16rpx;
+}
+
+.video-footer .footer-item {
+  flex: 1;
+  text-align: center;
+}
+
+.video-footer .item-icon {
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  text-align: center;
+  margin-bottom: 12rpx;
+}
+
+.i-list {
+  width: 34rpx;
+  height: 28rpx;
+  margin-top: 12rpx;
+}
+
+.i-doc {
+  width: 26rpx;
+  height: 34rpx;
+  margin-top: 6rpx;
+}
+
+.i-share {
+  width: 38rpx;
+  height: 38rpx;
+  margin-top: 1rpx;
+}
+
+.video-footer .item-icon image {
+}
+
+.video-footer .footer-item .item-content {
+  color: #1976f1;
+  font-size: 18rpx;
+  line-height: 1;
+  display: inline-block;
+  position: relative;
+  padding: 0 20rpx;
+}
+
+.video-footer .share-btn {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  background: none;
+}
+
+.share-btn::after {
+  border: none;
+}
+
+/* footer end */
+
+.audio {
+  display: none;
+}
+
+/* 播放列表开始 */
+
+/* pages/audio/list/list.wxss */
+
+.play-list-wrap {
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 100;
+}
+
+.list-main {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  height: 70vh;
+  width: 100%;
+  color: #282828;
+  padding: 0 30rpx;
+}
+
+.list-main .main-head {
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #e5e5e5;
+  margin-bottom: 8rpx;
+  line-height: 1;
+}
+
+.main-list-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 90rpx 30rpx 110rpx;
+  width: 100%;
+  height: 100%;
+}
+
+.list-main .main-list {
+  height: 100%;
+}
+
+.list-main .main-list .active {
+  color: #1972f5;
+}
+
+.active .item-title text {
+  color: #1972f5;
+}
+
+.list-main .main-list .active view {
+  color: #1972f5;
+}
+
+.list-main .main-list .active text {
+  color: #1972f5;
+}
+
+.list-main .main-item {
+  border-bottom: 1rpx solid #e5e5e5;
+  padding: 30rpx 0;
+}
+
+.list-main .main-item:last-child {
+  border-bottom: none;
+}
+
+.item-title {
+  line-height: 1;
+}
+
+.item-title text {
+  font-size: 20rpx;
+  line-height: 28rpx;
+  color: #6e6e6e;
+  margin-left: 12rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.item-time {
+  font-size: 20rpx;
+  line-height: 1;
+  color: #6e6e6e;
+  margin-top: 10rpx;
+}
+
+.item-time text {
+  margin-left: 20rpx;
+  font-size: 20rpx;
+  display: inline-block;
+}
+
+.main-close {
+  padding: 36rpx 0 48rpx;
+  width: 100%;
+  font-size: 28rpx;
+  line-height: 1;
+  color: #6e6e6e;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-top: 1rpx solid #e5e5e5;
+  background: #fff;
+}
+
+/* 播放列表结束 */

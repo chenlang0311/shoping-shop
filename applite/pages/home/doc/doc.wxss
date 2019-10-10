@@ -1,0 +1,5 @@
+/* pages/home/doc/doc.wxss */
+.content-wrap {
+  padding: 20rpx 26rpx 60rpx;
+  overflow: hidden;
+}

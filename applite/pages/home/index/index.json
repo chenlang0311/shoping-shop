@@ -1,0 +1,10 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "head-tab": "/component/tab/head-tab",
+    "video-btn": "/component/video-btn/video-btn",
+    "load-more": "/component/load-more/load-more",
+    "list-section": "/component/list-item/list-item"
+  },
+  "backgroundTextStyle": "dark"
+}

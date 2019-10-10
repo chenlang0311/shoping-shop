@@ -1,0 +1,97 @@
+/* pages/mine/lesson/lesson.wxss */
+
+/* lesson-unlock start */
+.lesson-unlock {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lesson-unlock .unlock-main {
+  text-align: center;
+  margin-bottom: 200rpx;
+}
+
+.lesson-unlock image {
+  width: 136rpx;
+  height: 120rpx;
+}
+
+.lesson-unlock .unlock-content {
+  color: #282828;
+}
+
+.lesson-unlock .unlock-tip {
+  margin-top: 20rpx;
+}
+
+.lesson-unlock .unlock-btn {
+ color: #8e6c3f;
+ border: 1px solid #aa9373;
+ border-radius: 12rpx;
+ padding: 20rpx 10rpx;
+ line-height: 1;
+ font-size: 20rpx;
+ margin-top: 30rpx;
+}
+
+/* lesson-unlock end*/
+
+/* lesson-list start*/
+.lesson-list {
+  /* padding: 40rpx 0 100rpx; */
+}
+
+.head-wrap {
+  padding: 20rpx 34rpx 0;
+  position: relative;
+  width: 100%;
+  height: 420rpx;
+}
+
+.head-wrap .img-mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .1);
+}
+
+.head-wrap .img-wrap {
+  height: 100%;
+  border-radius: 12rpx;
+  overflow: hidden;
+  position: relative;
+}
+
+.head-wrap image {
+  width: 100%;
+  height: 100%;
+  border-radius: 12rpx;
+}
+
+.head-wrap .head-content {
+  position: absolute;
+  bottom: 20rpx;
+  left: 34rpx;
+  padding-left: 30rpx;
+  line-height: 1;
+  color: #ffffff;
+  padding-bottom: 28rpx;
+  z-index: 20;
+}
+
+.head-wrap .head-title {
+  font-size: 38rpx;
+}
+
+.head-wrap .head-lock {
+  font-size: 24rpx;
+  margin-top: 14rpx;
+}
+
+/* lesson-list end */

@@ -1,0 +1,31 @@
+/* pages/mine/contact/contact.wxss */
+
+.contact-wrap {
+  padding-top: 10rpx;
+}
+
+.list {
+  padding: 0 30rpx;
+}
+
+.item {
+  border-bottom: 1rpx solid #f0f0f0;
+  position: relative;
+}
+
+.item-image {
+  position: absolute;
+  left: 20rpx;
+  top: 30rpx;
+  width: 42rpx;
+  height: 38rpx;
+}
+
+.item-content {
+  padding: 30rpx 30rpx 30rpx 70rpx;
+  color: #282828;
+}
+
+.item-content text {
+  color: #616161;
+}

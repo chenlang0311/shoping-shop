@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/home/index/index",
+    "pages/home/doc/doc",
+    "pages/home/detail/detail",
+    "pages/audio/index/index",
+    "pages/mine/index/index",
+    "pages/mine/lesson/lesson",
+    "pages/mine/contact/contact",
+    "pages/mine/about/about",
+    "pages/audio/list/list"
+  ],
+  "tabBar": {
+    "selectedColor": "#1976f1",
+    "color": "#282828",
+    "list": [
+      {
+        "pagePath": "pages/home/index/index",
+        "text": "首页",
+        "iconPath": "./statics/img/footer/home.png",
+        "selectedIconPath": "./statics/img/footer/home_active.png"
+      },
+      {
+        "pagePath": "pages/mine/index/index",
+        "text": "我的",
+        "iconPath": "./statics/img/footer/mine.png",
+        "selectedIconPath": "./statics/img/footer/mine_active.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "重建自我",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

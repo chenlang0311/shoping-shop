@@ -1,0 +1,21 @@
+<!--component/vodeo-btn/video-btn.wxml-->
+
+<view class="video-wrap" bindtap='handleToAudio'>
+  <view class="video-content">
+    <image src="/statics/img/home/btn_comp_play.png"></image>
+    <view class="play-animation" wx:if="{{audioInfo}}">
+      <view class="play-wrap" wx:if="{{!isPlay}}">
+        <view class="child child-1"></view>
+        <view class="child child-2"></view>
+        <view class="child child-3"></view>
+      </view>
+
+      <view class="play-wrap animation" wx:if="{{isPlay}}">
+        <view class="child child-1"></view>
+        <view class="child child-2"></view>
+        <view class="child child-3"></view>
+      </view>
+
+    </view>
+  </view>
+</view>

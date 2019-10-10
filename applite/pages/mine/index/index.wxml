@@ -1,0 +1,121 @@
+<!--pages/mine/index/index.wxml-->
+<view>
+  <view class="head-wrap">
+    <view class="head-bg">
+      <image mode='widthFix' src="../../../statics/img/mine/mine_bg.png"></image>
+    </view>
+    <block wx:if="{{userInfo}}">
+      <view class="head-img">
+        <image src="{{userInfo.avatarUrl}}"></image>
+      </view>
+
+      <view class="head-nickname">{{userInfo.nickName}}</view>
+    </block>
+
+    <block wx:if="{{!userInfo}}">
+     <view class="head-img">
+      <image src="../../../statics/img/mine/head_img.png" bindtap="goLogin"></image>
+      </view>
+      <view class="head-nickname" bindtap="goLogin">未登录</view>
+    </block>
+  </view>
+
+  <view class="empty-block"></view>
+
+  <view class="mine-data">
+    <view class="mine-data-item">
+      <view>全部</view>
+      <view class="item-value">{{class_total || 0}}</view>
+    </view>
+    <view class="mine-data-item">
+      <view>解锁</view>
+      <view class="item-value">{{class_locked || 0}}</view>
+    </view>
+    <view class="mine-data-item">
+      <view>已学</view>
+      <view class="item-value">{{catalog_read + ' / ' + catalog_locked}}</view>
+    </view>
+  </view>
+
+  <view class="empty-block"></view>
+
+  <view class="recommend list-wrap" bindtap="goItem">
+    <view class="item-logo"><image src="../../../statics/img/mine/recommend_logo.png"></image>
+    </view>
+    <view class="recommend-main">
+      <view>谈谈理想，顺便赚钱。</view>
+      <view class="text">你的理想理财小程序</view>
+    </view>
+    <view class="item-arrow"><image src="../../../statics/img/mine/i_arrow_right.png"></image>
+    </view>
+    
+  </view>
+
+  <view class="empty-block"></view>
+
+  <!-- list -->
+  <view class="list-wrap">
+
+    <navigator url='../lesson/lesson' hover-class="my-navigator-hover">
+      <view class="list-item">
+
+        <view class="item-main">
+          <view class="item-icon">
+            <image src="../../../statics/img/mine/i_my_class.png"></image>
+          </view>
+          <view class="item-content">我的课程</view>
+          <view class="item-arrow">
+            <image src="../../../statics/img/mine/i_arrow_right.png"></image>
+          </view>
+        </view>
+
+      </view>
+    </navigator>
+
+
+    <view class="list-item">
+      <button class=" share-btn" open-type='share'></button>
+      <view class="item-main">
+        <view class="item-icon">
+          <image src="../../../statics/img/mine/i_share.png"></image>
+        </view>
+        <view class="item-content">分享小程序</view>
+        <view class="item-arrow">
+          <image src="../../../statics/img/mine/i_arrow_right.png"></image>
+        </view>
+      </view>
+    </view>
+
+    <navigator url='../contact/contact' hover-class="my-navigator-hover">
+      <view class="list-item">
+        <view class="item-main">
+          <view class="item-icon">
+            <image src="../../../statics/img/mine/i_contact.png"></image>
+          </view>
+          <view class="item-content">联系客服</view>
+          <view class="item-arrow">
+            <image src="../../../statics/img/mine/i_arrow_right.png"></image>
+          </view>
+        </view>
+      </view>
+    </navigator>
+
+    <navigator url='../about/about' hover-class="my-navigator-hover">
+      <view class="list-item">
+        <view class="item-main">
+          <view class="item-icon">
+            <image src="../../../statics/img/mine/i_about.png"></image>
+          </view>
+          <view class="item-content">关于我们</view>
+          <view class="item-arrow">
+            <image src="../../../statics/img/mine/i_arrow_right.png"></image>
+          </view>
+        </view>
+      </view>
+    </navigator>
+
+  </view>
+
+  <!-- video-btn -->
+  <video-btn></video-btn>
+</view>

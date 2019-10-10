@@ -1,0 +1,5 @@
+<!--pages/home/doc/doc.wxml-->
+<import src="../../../wxParse/wxParse.wxml" />
+<view class="content-wrap">
+  <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+</view>

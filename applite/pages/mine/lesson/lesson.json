@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "我的课程",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "list-item": "/component/list-item/list-item"
+  }
+}

@@ -1,0 +1,106 @@
+/* pages/audio/list/list.wxss */
+
+.play-list-wrap {
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: rgba(0 ,0 , 0, .2);
+}
+
+.list-main {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  height: 70vh;
+  width: 100%;
+  color: #282828;
+  padding: 0 30rpx;
+}
+
+.list-main .main-head {
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #e5e5e5;
+  margin-bottom: 8rpx;
+  line-height: 1;
+}
+
+.main-list-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 90rpx 30rpx 110rpx;
+  width: 100%;
+  height: 100%;
+}
+
+.list-main .main-list {
+  height: 100%;
+}
+
+.list-main .main-list .active {
+  color: #1972f5;
+}
+
+ .active .item-title text {
+   color: #1972f5;
+ }
+
+ .list-main .main-list .active view {
+  color: #1972f5;
+} 
+
+.list-main .main-list .active text  {
+  color: #1972f5;
+} 
+
+.list-main .main-item {
+  border-bottom: 1rpx solid #e5e5e5;
+  padding: 30rpx 0;
+}
+
+.list-main .main-item:last-child {
+  border-bottom: none;
+}
+
+.item-title {
+  line-height: 1;
+}
+
+.item-title text {
+  font-size: 20rpx;
+  line-height: 28rpx;
+  color: #6e6e6e;
+  margin-left: 12rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.item-time {
+  font-size: 20rpx;
+  line-height: 1;
+  color: #6e6e6e;
+  margin-top: 10rpx;
+}
+
+.item-time text {
+  margin-left: 20rpx;
+  font-size: 20rpx;
+  display: inline-block;
+}
+
+.main-close {
+  padding: 36rpx 0 48rpx;
+  width: 100%;
+  font-size: 28rpx;
+  line-height: 1;
+  color: #6e6e6e;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-top: 1rpx solid #e5e5e5;
+  background: #fff;
+}

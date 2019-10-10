@@ -1,0 +1,20 @@
+<!--pages/mine/lesson/lesson.wxml-->
+<!-- <view class="page"> -->
+<!-- 未解锁任何课程 -->
+ <view class="lesson-unlock" wx:if="{{def.init && !def.list.length}}"> 
+  <view class="unlock-main">
+    <image src="../../../statics/img/mine/no_lesson.png"></image>
+    <view class="unlock-content">
+      <view class="unlock-tip">这里什么都没有~</view>
+      <view class="unlock-btn" bindtap="goHome">随便看看</view>
+    </view>
+  </view>
+</view>
+
+<!-- 课程列表 -->
+ <view class="lesson-list {{def.init && def.list.length ? '' : 'hide'}}" > 
+<!-- <view class="lesson-list" wx:if="{{false}}"> -->
+
+  <list-item active="{{tab}}" hasTime="{{false}}" name="def" list-data="{{def}}"></list-item>
+</view>
+<!-- </view> -->
