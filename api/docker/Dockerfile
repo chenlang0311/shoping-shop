@@ -1,5 +1,5 @@
 FROM registry.ewanhe.com/software/node:8.8.1-alpine
-MAINTAINER Zhang Xiang <zhangxiang199101@gmail.com>
+MAINTAINER Chen Lang <chenlang0311@gmail.com>
 
 # Install global pm2 
 RUN npm install pm2 -g --registry=https://registry.npm.taobao.org

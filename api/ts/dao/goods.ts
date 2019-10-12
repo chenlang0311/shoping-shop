@@ -4,7 +4,7 @@ import { DaoBase, SeqzDao } from './base';
 
 class Dao extends DaoBase {
     private static instance: Dao;
-    private static tableName: string = 'classes';
+    private static tableName: string = 'goods';
 
     public constructor(seqz: Sequelize, modelName: string) {
         super(seqz, modelName);

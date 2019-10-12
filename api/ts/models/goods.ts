@@ -10,29 +10,16 @@ module.exports = function (sequelize: Sequelize, DataTypes: DataTypes) {
       primaryKey: true,
       autoIncrement: true
     },
-    category_id: {
-      type: DataTypes.INTEGER(11).UNSIGNED,
-      allowNull: false
-    },
-    channel: {
-      type: DataTypes.ENUM('audio','video'),
-      allowNull: false,
-      defaultValue: 'audio'
-    },
-    original_price: {
-      type: DataTypes.DECIMAL,
-      allowNull: true
-    },
     price: {
       type: DataTypes.DECIMAL,
       allowNull: true
     },
-    title: {
-      type: DataTypes.STRING(255),
+    name: {
+      type: DataTypes.TEXT,
       allowNull: true
     },
-    abstract: {
-      type: DataTypes.TEXT,
+    stock: {
+      type: DataTypes.CHAR(64),
       allowNull: true
     },
     author: {
@@ -43,20 +30,7 @@ module.exports = function (sequelize: Sequelize, DataTypes: DataTypes) {
       type: DataTypes.TEXT,
       allowNull: true
     },
-    cover_pic: {
-      type: DataTypes.TEXT,
-      allowNull: true
-    },
-    virtual_unlocks: {
-      type: DataTypes.INTEGER(11),
-      allowNull: true
-    },
-    unlocks: {
-      type: DataTypes.INTEGER(11),
-      allowNull: false,
-      defaultValue: '0'
-    },
-    desc: {
+    pic: {
       type: DataTypes.TEXT,
       allowNull: true
     },

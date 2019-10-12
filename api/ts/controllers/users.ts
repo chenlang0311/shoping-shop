@@ -256,9 +256,10 @@ export async function exchangeGoods(req: Request, res: Response, next: NextFunct
     }
     if (!user) return res.sendErr('不存在的用户');
     let coin = user.coin;
-    coin = coin - 2;
-    console.log(coin)
-    if (coin > 0) {
+    console.log('coin-----', coin)
+   
+    if (coin >= 2) {
+        coin = coin - 2;//暂定是2，实际情况根据管理后台制定的价格
         let options = {
             coin
         };
