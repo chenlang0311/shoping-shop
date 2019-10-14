@@ -50,6 +50,7 @@ function initDao() {
     let Records = seqz.import('../models/records');
     seqz.import('../models/swipers');
     seqz.import('../models/orders');
+    seqz.import('../models/goods');
     Classes.hasMany(Catalogs, { foreignKey: 'class_id', as: 'catalogs' });
     Classes.hasOne(Details, { foreignKey: 'class_id', as: 'details' });
     Records.belongsTo(Classes, { foreignKey: 'class_id', as: 'classes' });

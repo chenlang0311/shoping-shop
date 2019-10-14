@@ -6,6 +6,7 @@ import { config } from '../config/config';
 import * as rediscache from '../lib/rediscache';
 
 export async function findClassList(req: Request, res: Response, next: NextFunction) {
+    return res.sendOk()
     let { page, count, category_id, order_by, order_sort, search } = req.query;
     let { offset, limit } = utils.getPageCount(page, count);
     let redisKey = { offset, limit, category_id, order_by, order_sort, search }
@@ -61,6 +62,7 @@ export async function findClassList(req: Request, res: Response, next: NextFunct
     return res.sendOk(data);
 }
 export async function findClassDetails(req: Request, res: Response, next: NextFunction) {
+    return res.sendOk()
     let locked = true;
     let { id } = req.params;
     let user_id = req.jwtAccessToken ? req.jwtAccessToken.sub : null;

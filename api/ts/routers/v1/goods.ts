@@ -1,5 +1,4 @@
 import { Router } from 'express';
-import { validate } from '../../lib/validator';
 import { routerHandler } from '../../lib/routerbase';
 // import { checkLogin } from '../../lib/jwt';
 import { Goods } from '../../controllers';

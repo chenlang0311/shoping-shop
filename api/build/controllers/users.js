@@ -250,9 +250,20 @@ async function exchangeGoods(req, res, next) {
     if (!user)
         return res.sendErr('不存在的用户');
     let coin = user.coin;
-    console.log('coin-----', coin);
-    if (coin >= 2) {
-        coin = coin - 2; //暂定是2，实际情况根据管理后台制定的价格
+    let goods = await dao_1.GoodsDao.getInstance().findByPrimary(1);
+    console.log("goods------", goods);
+    if (!goods)
+        return res.sendErr("未找到商品");
+    let { price, stock, state } = goods;
+    if (state == 'deleted')
+        return res.sendErr("兑换商品已被删除");
+    if (stock <= 0)
+        return res.sendErr("兑换商品库存不足");
+    // 
+    console.log(coin);
+    if (coin - price >= 0) {
+        coin = coin - price;
+        stock = stock - 1;
         let options = {
             coin
         };
@@ -260,6 +271,12 @@ async function exchangeGoods(req, res, next) {
         let results = await dao_1.UsersDao.getInstance().updateUserInfo(user_id, options);
         if (!results)
             return res.sendErr('兑换失败');
+        let goodsOpt = {
+            stock
+        };
+        let goodsRes = await dao_1.GoodsDao.getInstance().updateGoodsInfo(1, goodsOpt);
+        if (!goodsRes)
+            return res.sendErr('商品兑换失败');
         return res.sendOk('兑换成功');
     }
     else {

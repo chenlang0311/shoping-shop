@@ -6,6 +6,7 @@ const wxutils = require("../lib/wxutils");
 const config_1 = require("../config/config");
 const rediscache = require("../lib/rediscache");
 async function findClassList(req, res, next) {
+    return res.sendOk();
     let { page, count, category_id, order_by, order_sort, search } = req.query;
     let { offset, limit } = utils.getPageCount(page, count);
     let redisKey = { offset, limit, category_id, order_by, order_sort, search };
@@ -63,6 +64,7 @@ async function findClassList(req, res, next) {
 }
 exports.findClassList = findClassList;
 async function findClassDetails(req, res, next) {
+    return res.sendOk();
     let locked = true;
     let { id } = req.params;
     let user_id = req.jwtAccessToken ? req.jwtAccessToken.sub : null;

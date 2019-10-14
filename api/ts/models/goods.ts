@@ -18,17 +18,8 @@ module.exports = function (sequelize: Sequelize, DataTypes: DataTypes) {
       type: DataTypes.TEXT,
       allowNull: true
     },
-    stock: {
-      type: DataTypes.CHAR(64),
-      allowNull: true
-    },
-    author: {
-      type: DataTypes.STRING(255),
-      allowNull: true
-    },
-    author_abstract: {
-      type: DataTypes.TEXT,
-      allowNull: true
+    stock:{
+      type: DataTypes.CHAR(64)
     },
     pic: {
       type: DataTypes.TEXT,
