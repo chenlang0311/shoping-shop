@@ -1,26 +1,26 @@
-all: classroom-api
+all: api
 
 check_env:
 	@if [ "$(TARGET_DIR)" = "" ]; then echo "ERROR: TARGET_DIR was not set"; exit 1; fi
 	@if [ "$(TAG_VERSION)" = "" ]; then echo "ERROR: TAG_VERSION was not set"; exit 1; fi
 	@if [ "$(REGISTRY)" = "" ]; then echo "ERROR: REGISTRY was not set"; exit 1; fi
 
-classroom-api:check_env
+api:check_env
 	test -e node_modules || cnpm install
 	gulp build
 
 install:check_env
-	rm -rf $(TARGET_DIR)/classroom-api
-	mkdir -p $(TARGET_DIR)/classroom-api/app
-	cp -r docker/* $(TARGET_DIR)/classroom-api
-	cp -r build $(TARGET_DIR)/classroom-api/app
-	cp -r bin $(TARGET_DIR)/classroom-api/app
-	cp -r public $(TARGET_DIR)/classroom-api/app
-	cp package.json $(TARGET_DIR)/classroom-api/app
-	cp -r node_modules $(TARGET_DIR)/classroom-api/app
+	rm -rf $(TARGET_DIR)/api
+	mkdir -p $(TARGET_DIR)/api/app
+	cp -r docker/* $(TARGET_DIR)/api
+	cp -r build $(TARGET_DIR)/api/app
+	cp -r bin $(TARGET_DIR)/api/app
+	cp -r public $(TARGET_DIR)/api/app
+	cp package.json $(TARGET_DIR)/api/app
+	cp -r node_modules $(TARGET_DIR)/api/app
 
 image:check_env
-	cd $(TARGET_DIR)/classroom-api && sudo docker build . -t $(REGISTRY)/project/classroom/classroom-api:$(TAG_VERSION)
+	cd $(TARGET_DIR)/api && sudo docker build . -t $(REGISTRY)/api:$(TAG_VERSION)
 
 .PHONY: clean
 clean:
