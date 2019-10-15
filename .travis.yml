@@ -10,7 +10,7 @@ before_install:
 before_script:
   - npm install -g gulp
 script:
-  
+  - gulp --cwd api
   - gulp
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t 1025518502/shoping-shop:latest .
