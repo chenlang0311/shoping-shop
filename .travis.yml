@@ -5,7 +5,7 @@ services:
   - docker
 
 before_install:
-  - build.sh
+  -sh -c 'cd api'
   - npm install
 before_script:
   - npm install -g gulp
